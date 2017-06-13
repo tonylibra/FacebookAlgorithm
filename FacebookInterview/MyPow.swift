@@ -24,7 +24,7 @@ class MyPow {
         var rst = myPow(n, x / 2)
         rst = rst * rst
         if x % 2 == 1 {
-            rst = rst * x
+            rst = rst * n
         }
         return rst
     }

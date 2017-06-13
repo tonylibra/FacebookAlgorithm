@@ -95,6 +95,19 @@ class CombinationSum {
     }
     
     //IV
-    
-    
+    func combinationSum4(_ nums: [Int], _ target: Int) -> Int {
+        guard nums.count > 0 else { return 0 }
+        
+        var f: [Int] = Array(repeating: 0, count: target + 1)
+        f[0] = 1
+        
+        for i in 0...target {
+            for num in nums {
+                if i + num <= target {
+                    f[i + num] += f[i]
+                }
+            }
+        }
+        return f[target]
+    }
 }
