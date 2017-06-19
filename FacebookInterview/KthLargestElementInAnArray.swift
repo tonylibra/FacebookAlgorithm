@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//quick sort
 //1. partition, find the pivot
 //2. compare pivot indx with k, then recursive
 class KthLargestElementInAnArray {

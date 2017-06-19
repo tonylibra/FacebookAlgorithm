@@ -8,6 +8,7 @@
 
 import Foundation
 
+//just go through nums array, compare with smallest first, if bigger, compare with second middle num, if bigger, return true
 class IncreasengTripletSubSequence {
     func increasingTriplet(_ nums: [Int]) -> Bool {
         var x = Int.max

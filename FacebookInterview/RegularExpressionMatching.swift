@@ -32,3 +32,10 @@ class RegularExpressionMatching {
         }
     }
 }
+
+//if second character of p is not *
+//so s[0] == p[0] or s[0] == "."
+// we can recursive to s.substring(from: 1), p.substring(from: 1)
+
+//if second character of p is *
+//we compare s.substring(from: i), i means we loop i from 0, to compare with p.substring(from: 2), means after "*"

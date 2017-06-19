@@ -9,6 +9,7 @@
 import Foundation
 
 class Subsets {
+    //just very backtracking
     func subsets(_ nums: [Int]) -> [[Int]] {
         guard nums.count > 0 else { return [] }
         var rst: [[Int]] = []

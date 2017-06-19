@@ -9,6 +9,25 @@
 import Foundation
 class MeetingRoom {
     
+    //meeting room I
+    //just check is there overlap
+    func canAttendMeetings(_ intervals: [Interval]) -> Bool {
+        guard intervals.count > 0 else { return true }
+        let sortedIntervals = intervals.sorted(by: { in1, in2 in
+            in1.start < in2.start
+        })
+        
+        var prev = sortedIntervals[0]
+        for (idx, interval) in sortedIntervals.enumerated() {
+            guard idx > 0 else { continue }
+            if prev.end > interval.start {
+                return false
+            }
+            prev = interval
+        }
+        return true
+    }
+    
     
     //meeting room II
     //1. sorted the intervals with start

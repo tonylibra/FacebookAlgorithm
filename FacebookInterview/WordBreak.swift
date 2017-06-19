@@ -8,8 +8,8 @@
 
 import Foundation
 
+//just do the substring from last valid break to current pos
 class WordBreak {
-    
     //record the last index has word break
     func wordBreak(_ s: String, _ wordDict: [String]) -> Bool {
         guard s.characters.count > 0 else { return false }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+//use two pointer, left and right, if sum < k, add right++, if sum > k, minus left++, evety time we get sum > k, we keep the minLen
 class MinumumSizeSubarraySum {
     func minSubArrayLen(_ s: Int, _ nums: [Int]) -> Int {
         guard nums.count > 0 else { return 0 }
@@ -28,7 +29,7 @@ class MinumumSizeSubarraySum {
             }
         }
         
-        while sum >= s {
+        while sum >= s { // >=
             minLen = min(minLen, right - left)
             sum -= nums[left]
             left += 1

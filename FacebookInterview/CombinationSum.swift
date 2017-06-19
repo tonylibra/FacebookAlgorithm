@@ -9,7 +9,7 @@
 import Foundation
 
 class CombinationSum {
-    //I, the candidates does not have dup
+    //I, the candidates does not have dup, SORT!
     func combinationSumI(_ candidates: [Int], _ target: Int) -> [[Int]] {
         guard candidates.count > 0 else { return [] }
         var rst: [[Int]] = []

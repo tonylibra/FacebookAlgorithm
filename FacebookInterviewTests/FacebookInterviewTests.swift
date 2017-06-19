@@ -67,9 +67,51 @@ class FacebookInterviewTests: XCTestCase {
     }
     
     func test_something() {
-        for i in "a"..."z" {
-            print(i)
+        let obj = AlienDictioanry()
+        let str = obj.alienOrder(["wrt","wrf","er","ett","rftt"])
+        XCTAssertEqual(str, "wertf")
+    }
+    
+    func test_BTInroder() {
+        let root = getBinaryTree()
+        let obj = TreeNodeTraverse()
+        obj.inorderTraverseHelper(root) { (val) -> Bool in
+            if val > 5 {
+                return false
+            }
+            return true
         }
     }
     
+    func getBinaryTree() -> TreeNode {
+        let node1 = TreeNode(1)
+        let node2 = TreeNode(2)
+        let node3 = TreeNode(3)
+        let node4 = TreeNode(4)
+        let node5 = TreeNode(5)
+        let node6 = TreeNode(6)
+        let node7 = TreeNode(7)
+        node4.left = node2
+        node2.left = node1
+        node2.right = node3
+        node4.right = node6
+        node6.left = node5
+        node6.right = node7
+        return node4
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

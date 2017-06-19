@@ -9,10 +9,26 @@
 import Foundation
 
 class RemoveDuplicatesfromSortedArray {
+    //I
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+        guard nums.count > 0 else { return 0 }
+        var len = 0
+        var pointer = 0
+        
+        while pointer < nums.count {
+            if nums[pointer] == nums[len] {
+                pointer += 1
+            } else {
+                len += 1
+                nums[len] = nums[pointer]
+                pointer += 1
+            }
+        }
+        return len + 1
+    }
     
     //II can keep maximum two dup
-    //
-    func II(_ nums: inout [Int]) -> Int {
+    func removeDuplicatesII(_ nums: inout [Int]) -> Int {
         guard nums.count > 1 else { return nums.count }
         
         var left = 0
@@ -25,13 +41,11 @@ class RemoveDuplicatesfromSortedArray {
                 nums[left] = nums[pointer]
                 cnt = 1
             } else {
-                guard cnt < 2 else {
-                    pointer += 1
-                    continue
+                if cnt < 2 {
+                    left += 1
+                    nums[left] = nums[pointer]
+                    cnt += 1
                 }
-                left += 1
-                nums[left] = nums[pointer]
-                cnt += 1
             }
             pointer += 1
         }

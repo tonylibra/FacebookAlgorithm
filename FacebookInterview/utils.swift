@@ -30,6 +30,15 @@ class TrieNode {
     }
 }
 
+class ListNode {
+    var val: Int
+    var next: ListNode?
+    
+    init(_ val: Int) {
+        self.val = val
+    }
+}
+
 extension String {
     subscript(i: Int) -> String {
         let index = self.index(startIndex, offsetBy: i)
@@ -46,6 +55,11 @@ extension String {
         guard start < self.characters.count else { return "" }
         let startIdx = self.index(startIndex, offsetBy: start)
         return self.substring(from: startIdx)
+    }
+    
+    func substring(to end: Int) -> String {
+        let endIdx = self.index(startIndex, offsetBy: end)
+        return self.substring(to: endIdx)
     }
 }
 

@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+// 0 is -1, 1 is 1, do the sum, if sum == 0, means that equal number of 0 and 1
 class ContiguousArray {
     func findMaxLength(_ nums: [Int]) -> Int {
         var map: [Int: Int] = [:]

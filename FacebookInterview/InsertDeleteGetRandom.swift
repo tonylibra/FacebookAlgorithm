@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-
+//
 class InsertDeleteGetRandom {
     var map1: [Int: Int] //val - index
     var map2: [Int: Int] //index - val

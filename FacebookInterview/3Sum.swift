@@ -8,6 +8,8 @@
 
 import Foundation
 
+//sort
+//same as two sum, just need one more pointer
 class ThreeSum {
     func threeSum(_ nums: [Int]) -> [[Int]] {
         guard nums.count > 2 else { return [] }

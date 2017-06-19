@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+//idea: accumulate from 0..i, and save the sum to the map, sum % k is key, and idx is value. 
 //two cases need take care
 //1.  sum has to be at least 2 nums, so use pre to solve this
 //2. k can be 0, if k is zero, we always make remaning as sum, when sum is 0, we can say it is n times of k

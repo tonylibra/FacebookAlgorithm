@@ -32,4 +32,8 @@ class BinaryTreeLevelOrderTraverse {
         }
         return rst
     }
+    
+    func levelOrderTraverseII(_ root: TreeNode) -> [[Int]] {
+        return levelOrder(root).reversed()
+    }
 }
