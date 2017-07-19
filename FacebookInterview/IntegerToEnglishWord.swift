@@ -8,6 +8,7 @@
 
 import Foundation
 
+//remember to use empty string as placeholder for v arrays
 class IntegerToEnglishWord {
     let v = ["", "Thousand", "Million", "Billion"]
     let v1 = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
@@ -24,16 +25,16 @@ class IntegerToEnglishWord {
             if curtNum / 100 > 0 {
                 curtStr.append("\(v2[curtNum / 100]) Hundred")
             }
-            if curtNum % 100 > 0 {
-                if curtNum % 100 < 20 {
-                    curtStr.append("\(v2[curtNum % 100])")
+            curtNum = curtNum % 100
+            if curtNum > 0 {
+                if curtNum < 20 {
+                    curtStr.append("\(v2[curtNum])")
                 } else {
-                    let tmpNum = curtNum % 100
-                    if tmpNum / 10 != 0 {
-                        curtStr.append("\(v1[tmpNum / 10])")
+                    if curtNum / 10 != 0 {
+                        curtStr.append("\(v1[curtNum / 10])")
                     }
-                    if tmpNum % 10 != 0 {
-                        curtStr.append("\(v2[tmpNum % 10])")
+                    if curtNum % 10 != 0 {
+                        curtStr.append("\(v2[curtNum % 10])")
                     }
                 }
             }

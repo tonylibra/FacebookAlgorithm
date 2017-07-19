@@ -36,7 +36,7 @@ class MeetingRoom {
     func minMeetingRooms(_ intervals: [Interval]) -> Int {
         guard intervals.count > 0 else { return 0 }
         let sortedIntervals = intervals.sorted(by: { $0.start < $1.start })
-        var array: [Int] = []
+        var array: [Int] = [] //queue array
         array.append(sortedIntervals[0].end)
         var cnt = 1 //!!!!!!!!!!!!!!!!!!!!!!!!
         for i in 1..<sortedIntervals.count { //traverse O(n)

@@ -8,6 +8,8 @@
 
 import Foundation
 
+//add word: add each character to the trie tree, set isWord to true at end
+//search: recursive, keep current node, position. to use pos to check current character in the word, and to see if it is in the current node. if curremt character is ".", for loop each child in current node. recursive down
 class WordDictionary {
     var root: TrieNode
     init() {

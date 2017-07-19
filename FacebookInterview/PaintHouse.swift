@@ -9,30 +9,35 @@
 import Foundation
 
 class PaintHouse {
+    //1. current minimum cost should be current cost + last line's minimum cost.
+    //If the current idx is same as lastLineMin Cost, current min cost is current
+    //cost with last line second min code
     func minCostII(_ costs: [[Int]]) -> Int {
-        guard let cols = costs.first?.count, cols > 0 else { return 0 }
+        guard let cols = costs.first?.count else { return 0 }
         let rows = costs.count
         
-        var lastIdx = 0
         var lastMin = 0
-        var lastSec = 0
+        var lastSecondMin = 0
+        var lastMinIdx = -1
+        
         for i in 0..<rows {
             var curtMin = Int.max
-            var curtSec = Int.max
-            var curtIdx = 0
+            var curtSecondMin = Int.max
+            var curtMinIdx = -1
             for j in 0..<cols {
-                let sum = costs[i][j] + (j == lastIdx ? lastSec : lastMin)
-                if sum < curtMin {
-                    curtSec = curtMin
-                    curtMin = sum
-                    curtIdx = j
-                } else if sum < curtSec {
-                    curtSec = sum
+                let curtSum = (j == lastMinIdx ? lastSecondMin : lastMin) + costs[i][j]
+                if curtSum < curtMin {
+                    curtSecondMin = curtMin
+                    curtMin = curtSum
+                    curtMinIdx = j
+                } else if curtSum < curtSecondMin {
+                    curtSecondMin = curtSum
                 }
             }
-            lastSec = curtSec
+            
             lastMin = curtMin
-            lastIdx = curtIdx
+            lastSecondMin = curtSecondMin
+            lastMinIdx = curtMinIdx
         }
         return lastMin
     }

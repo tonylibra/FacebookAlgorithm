@@ -16,13 +16,11 @@ class RemoveDuplicatesfromSortedArray {
         var pointer = 0
         
         while pointer < nums.count {
-            if nums[pointer] == nums[len] {
-                pointer += 1
-            } else {
+            if nums[pointer] != nums[len] {
                 len += 1
                 nums[len] = nums[pointer]
-                pointer += 1
             }
+            pointer += 1
         }
         return len + 1
     }

@@ -42,13 +42,13 @@ class RemoveInvalidParentheses {
     
     var max: Int = 0
     func helper(_ remainStr: String, _ newStr: String, _ leftCnt: Int, _ maxLen: Int, _ rst: inout [String]) {
-        if remainStr.characters.count == 0 {
-            if leftCnt == 0 && newStr.characters.count != 0 {
-                if maxLen > max {
+        if remainStr.characters.count == 0 {//no remainning
+            if leftCnt == 0 && newStr.characters.count != 0 { //no left && there is newStr
+                if maxLen > max {//update max
                     max = maxLen
                 }
                 
-                if max == maxLen && !rst.contains(newStr) {
+                if max == maxLen && !rst.contains(newStr) { //avoid duplicate
                     rst.append(newStr)
                 }
             }

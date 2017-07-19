@@ -18,7 +18,7 @@ class KthLargestElementInAnArray {
     }
     
     func findHelper(_ nums: inout [Int], _ k: Int, _ left: Int, _ right: Int) -> Int  {
-        if left == right {
+        if left == right { //do not forget this!
             return nums[left]
         }
         let pIdx = partition(&nums, left, right)

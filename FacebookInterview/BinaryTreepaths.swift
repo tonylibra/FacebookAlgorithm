@@ -13,7 +13,7 @@ class BinaryTreePaths {
     func binaryTreePaths(_ root: TreeNode?) -> [String] {
         guard let root = root else { return [] }
         var rst: [String] = []
-        var item = "\(root.val)"
+        let item = "\(root.val)"
         helper(root, &rst, item)
         return rst
     }

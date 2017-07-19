@@ -15,7 +15,7 @@ class IncreasengTripletSubSequence {
         var y = Int.max
         
         for num in nums {
-            if num <= x {
+            if num <= x { //!!!!!have to be <=
                 x = num
             } else if num <= y {
                 y = num

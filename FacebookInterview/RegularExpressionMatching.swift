@@ -10,20 +10,22 @@ import Foundation
 
 class RegularExpressionMatching {
     func isMatch(_ s: String, _ p: String) -> Bool {
-        if p.characters.count == 0 {
-            return s.characters.count == 0
+        //p is empty string, s should be empty
+        if p.isEmpty {
+            return s.isEmpty
         }
         
         if p.characters.count == 1 || p[1] != "*" {
-            if s.characters.count < 1 || (p[0] != "." && s[0] != p[0]) {
-                return false
-            }
+            //if second character is not *, compare first, is same, recursive to next
+            guard s.characters.count > 0 && (p[0] == "." || s[0] == p[0]) else { return false }
             return isMatch(s.substring(from: 1), p.substring(from: 1))
         } else {
             let len = s.characters.count
             var i = -1
-            while i < len && (i < 0 || p[0] == "." || p[0] == s[0]) {
-                if isMatch(s.substring(from: i + 1), p.substring(from: 2)) {
+            //if first character can match, do isMatch(s.substring(from: 1), p.substring(from: 2)). * as zero precceding element
+            //recursive down, * as any number of precceding element, do isMatch(s.substring(from: i+1), p.substring(from: 2))
+            while i < len && (i < 0 || p[0] == "." || s[i] == p[0]) {
+                if isMatch(s.substring(from: i+1), p.substring(from: 2)) {
                     return true
                 }
                 i += 1

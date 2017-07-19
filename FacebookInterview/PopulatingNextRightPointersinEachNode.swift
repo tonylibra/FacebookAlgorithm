@@ -57,6 +57,7 @@ class PopulatingNextRightPointersinEachNode {
                 }
                 parent = currentParent.next
             }
+            //parent?.next = pNext
             parent = pNext
         }
     }

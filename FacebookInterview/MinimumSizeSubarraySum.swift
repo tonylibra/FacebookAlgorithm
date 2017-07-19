@@ -34,6 +34,7 @@ class MinumumSizeSubarraySum {
             sum -= nums[left]
             left += 1
         }
+        //there is a special case, the total sum of array is smaller that target, we should return 0, but minLen never updated
         return minLen == Int.max ? 0 : minLen
     }
 }

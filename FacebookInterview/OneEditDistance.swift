@@ -23,7 +23,7 @@ class OneEditDistance {
                 loc1 += 1
                 loc2 += 1
             } else {
-                if distance >= 1 {
+                if distance > 0 {
                     return false
                 }
                 distance += 1

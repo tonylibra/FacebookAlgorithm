@@ -19,7 +19,7 @@ class StrStr {
         
         for i in 0..<(haystack.characters.count - needle.characters.count + 1) {
             if needle[0] == haystack[i] {
-                if haystack.substring(from: i, with: needle.characters.count) == needle {
+                if haystack.substring(from: i, to: needle.characters.count) == needle {
                     return i
                 }
             }

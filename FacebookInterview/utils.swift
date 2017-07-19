@@ -39,11 +39,21 @@ class ListNode {
     }
 }
 
-extension String {
-    subscript(i: Int) -> String {
-        let index = self.index(startIndex, offsetBy: i)
-        return String(self[index])
+class DoubleListNode {
+    var val: Int
+    var next: DoubleListNode?
+    var prev: DoubleListNode?
+    
+    init(_ val: Int) {
+        self.val = val
     }
+}
+
+extension String {
+//    subscript(i: Int) -> String {
+//        let index = self.index(startIndex, offsetBy: i)
+//        return String(self[index])
+//    }
     
     func substring(from: Int, to: Int) -> String {
         let start = self.index(startIndex, offsetBy: from)

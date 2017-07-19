@@ -12,7 +12,8 @@ class TwoSum {
         guard nums.count > 1 else { return [-1, -1] }
         
         var map: [Int: Int] = [:] // [num: idx]
-        for i in 0..<nums.count {             if let idx = map[nums[i]] {
+        for i in 0..<nums.count {
+            if let idx = map[nums[i]] {
                 return [idx, i]
             } else {
                 map[target - nums[i]] = i
